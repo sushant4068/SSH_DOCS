@@ -1,0 +1,17 @@
+How to setup SSH key in GITHUB: Open GIT BASH
+
+1.Generate new ssh key: $ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ 	Generating public/private rsa key pair.
+2.Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]
+3.Enter passphrase (empty for no passphrase): [Type a passphrase]
+  Enter same passphrase again: [Type passphrase again]
+4.Adding your SSH key to the ssh-agent
+  $eval $(ssh-agent -s)
+	Agent pid 59566
+5.$ssh-add ~/.ssh/id_rsa
+6.Add key into GitHub:Setting->Deploy Key->Make it write access and save it
+7.git init
+8.git add .
+9.git commit -m "commit this"
+10.git remote add origin git@github.com:sushant4068/SSH_DOCS.git
+11.git push -u origin master
